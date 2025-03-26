@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A5D8BF942D8D9786007212FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D8BF142D8D4253007212FC /* WidgetKit.framework */; };
+		A5D8BF952D8D9786007212FC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D8BF162D8D4253007212FC /* SwiftUI.framework */; };
+		A5D8BFA42D8D9786007212FC /* FieldMateWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A5D8BF932D8D9786007212FC /* FieldMateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		A572A7C52D8C3E520098C371 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,17 +27,69 @@
 			remoteGlobalIDString = A572A7B32D8C3E510098C371;
 			remoteInfo = FieldMate;
 		};
+		A5D8BFA22D8D9786007212FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A572A7AC2D8C3E510098C371 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5D8BF922D8D9786007212FC;
+			remoteInfo = FieldMateWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A5D8BF2D2D8D4254007212FC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A5D8BFA42D8D9786007212FC /* FieldMateWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A572A7B42D8C3E510098C371 /* FieldMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FieldMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A572A7C42D8C3E520098C371 /* FieldMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A572A7CE2D8C3E520098C371 /* FieldMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5D8BF142D8D4253007212FC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A5D8BF162D8D4253007212FC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A5D8BF932D8D9786007212FC /* FieldMateWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FieldMateWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A572A7FB2D8C536F0098C371 /* Exceptions for "FieldMate" folder in "FieldMate" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A572A7B32D8C3E510098C371 /* FieldMate */;
+		};
+		A5D8BFA82D8D9786007212FC /* Exceptions for "FieldMateWidget" folder in "FieldMateWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A5D8BF922D8D9786007212FC /* FieldMateWidgetExtension */;
+		};
+		A5D8BFAA2D8D988D007212FC /* Exceptions for "FieldMate" folder in "FieldMateWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				FieldMateActivityAttributes.swift,
+			);
+			target = A5D8BF922D8D9786007212FC /* FieldMateWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A572A7B62D8C3E510098C371 /* FieldMate */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A572A7FB2D8C536F0098C371 /* Exceptions for "FieldMate" folder in "FieldMate" target */,
+				A5D8BFAA2D8D988D007212FC /* Exceptions for "FieldMate" folder in "FieldMateWidgetExtension" target */,
+			);
 			path = FieldMate;
 			sourceTree = "<group>";
 		};
@@ -43,6 +101,14 @@
 		A572A7D12D8C3E520098C371 /* FieldMateUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = FieldMateUITests;
+			sourceTree = "<group>";
+		};
+		A5D8BF962D8D9786007212FC /* FieldMateWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A5D8BFA82D8D9786007212FC /* Exceptions for "FieldMateWidget" folder in "FieldMateWidgetExtension" target */,
+			);
+			path = FieldMateWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,6 +135,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5D8BF902D8D9786007212FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5D8BF952D8D9786007212FC /* SwiftUI.framework in Frameworks */,
+				A5D8BF942D8D9786007212FC /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +153,8 @@
 				A572A7B62D8C3E510098C371 /* FieldMate */,
 				A572A7C72D8C3E520098C371 /* FieldMateTests */,
 				A572A7D12D8C3E520098C371 /* FieldMateUITests */,
+				A5D8BF962D8D9786007212FC /* FieldMateWidget */,
+				A5D8BF132D8D4253007212FC /* Frameworks */,
 				A572A7B52D8C3E510098C371 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,8 +165,18 @@
 				A572A7B42D8C3E510098C371 /* FieldMate.app */,
 				A572A7C42D8C3E520098C371 /* FieldMateTests.xctest */,
 				A572A7CE2D8C3E520098C371 /* FieldMateUITests.xctest */,
+				A5D8BF932D8D9786007212FC /* FieldMateWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A5D8BF132D8D4253007212FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5D8BF142D8D4253007212FC /* WidgetKit.framework */,
+				A5D8BF162D8D4253007212FC /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,10 +189,12 @@
 				A572A7B02D8C3E510098C371 /* Sources */,
 				A572A7B12D8C3E510098C371 /* Frameworks */,
 				A572A7B22D8C3E510098C371 /* Resources */,
+				A5D8BF2D2D8D4254007212FC /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A5D8BFA32D8D9786007212FC /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				A572A7B62D8C3E510098C371 /* FieldMate */,
@@ -163,6 +252,28 @@
 			productReference = A572A7CE2D8C3E520098C371 /* FieldMateUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		A5D8BF922D8D9786007212FC /* FieldMateWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5D8BFA52D8D9786007212FC /* Build configuration list for PBXNativeTarget "FieldMateWidgetExtension" */;
+			buildPhases = (
+				A5D8BF8F2D8D9786007212FC /* Sources */,
+				A5D8BF902D8D9786007212FC /* Frameworks */,
+				A5D8BF912D8D9786007212FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A5D8BF962D8D9786007212FC /* FieldMateWidget */,
+			);
+			name = FieldMateWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = FieldMateWidgetExtension;
+			productReference = A5D8BF932D8D9786007212FC /* FieldMateWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +295,9 @@
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = A572A7B32D8C3E510098C371;
 					};
+					A5D8BF922D8D9786007212FC = {
+						CreatedOnToolsVersion = 16.2;
+					};
 				};
 			};
 			buildConfigurationList = A572A7AF2D8C3E510098C371 /* Build configuration list for PBXProject "FieldMate" */;
@@ -203,6 +317,7 @@
 				A572A7B32D8C3E510098C371 /* FieldMate */,
 				A572A7C32D8C3E520098C371 /* FieldMateTests */,
 				A572A7CD2D8C3E520098C371 /* FieldMateUITests */,
+				A5D8BF922D8D9786007212FC /* FieldMateWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +338,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A572A7CC2D8C3E520098C371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5D8BF912D8D9786007212FC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +375,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5D8BF8F2D8D9786007212FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +394,11 @@
 			isa = PBXTargetDependency;
 			target = A572A7B32D8C3E510098C371 /* FieldMate */;
 			targetProxy = A572A7CF2D8C3E520098C371 /* PBXContainerItemProxy */;
+		};
+		A5D8BFA32D8D9786007212FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5D8BF922D8D9786007212FC /* FieldMateWidgetExtension */;
+			targetProxy = A5D8BFA22D8D9786007212FC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -399,6 +533,7 @@
 				DEVELOPMENT_TEAM = X38VF9H5UA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FieldMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,6 +563,7 @@
 				DEVELOPMENT_TEAM = X38VF9H5UA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FieldMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -518,6 +654,60 @@
 			};
 			name = Release;
 		};
+		A5D8BFA62D8D9786007212FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X38VF9H5UA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FieldMateWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FieldMateWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AppleDev.FieldMate.FieldMateWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A5D8BFA72D8D9786007212FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X38VF9H5UA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FieldMateWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FieldMateWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AppleDev.FieldMate.FieldMateWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,6 +743,15 @@
 			buildConfigurations = (
 				A572A7DF2D8C3E520098C371 /* Debug */,
 				A572A7E02D8C3E520098C371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5D8BFA52D8D9786007212FC /* Build configuration list for PBXNativeTarget "FieldMateWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5D8BFA62D8D9786007212FC /* Debug */,
+				A5D8BFA72D8D9786007212FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

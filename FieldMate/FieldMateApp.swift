@@ -11,7 +11,12 @@ import SwiftUI
 struct FieldMateApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ScheduleView()
         }
     }
 }
+
+#Preview {
+    ScheduleView()
+}
+

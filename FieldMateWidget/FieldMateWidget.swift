@@ -1,5 +1,5 @@
 //
-//  FieldMateWidget.swift
+//  FieldMateLiveActivity.swift
 //  FieldMateWidget
 //
 //  Created by Muhammad Ardiansyah Asrifah on 21/03/25.
@@ -7,78 +7,94 @@
 
 import WidgetKit
 import SwiftUI
+import ActivityKit
 
-struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), emoji: "😀")
-    }
-
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), emoji: "😀")
-        completion(entry)
-    }
-
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, emoji: "😀")
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
-    }
-
-//    func relevances() async -> WidgetRelevances<Void> {
-//        // Generate a list containing the contexts this widget is relevant in.
-//    }
-}
-
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-    let emoji: String
-}
-
-struct FieldMateWidgetEntryView : View {
-    var entry: Provider.Entry
-
-    var body: some View {
-        VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Emoji:")
-            Text(entry.emoji)
-        }
-    }
-}
-
-struct FieldMateWidget: Widget {
-    let kind: String = "FieldMateWidget"
-
+struct FieldMateLiveActivity: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            if #available(iOS 17.0, *) {
-                FieldMateWidgetEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
-            } else {
-                FieldMateWidgetEntryView(entry: entry)
-                    .padding()
-                    .background()
+        ActivityConfiguration(for: FieldMateActivityAttributes.self) { context in
+            VStack {
+                Text("🛠️ \(context.state.taskName)")
+                    .font(.headline)
+                    .bold()
+                    .foregroundColor(.white)
+                    .padding(.leading)
+                    .padding(.top, 30)
+                Text(context.state.taskLocation)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+                
+//                let remainingTime = Int((1 - context.state.progress) * 120)
+//                Text("⏳ Tugas Berikutnya Pada Jam: \(remainingTime) Menit")
+                Text("⏳ Tugas Berikutnya Pada Jam: 09.00 WIB")
+                    .font(.footnote)
+                    .foregroundColor(.orange)
+                
+                ProgressView(value: context.state.progress)
+                    .progressViewStyle(LinearProgressViewStyle())
+                    .padding(.horizontal)
+                    .tint(context.state.progress < 1.0 ? .yellow : .green)
+                
+                if context.state.progress >= 1.0 {
+                    Text("✅ Tugas Selesai!")
+                        .font(.footnote)
+                        .foregroundColor(.green)
+                }
+            }
+            .padding()
+            .activityBackgroundTint(Color.black.opacity(0.8))
+            .activitySystemActionForegroundColor(.white)
+        } dynamicIsland: { context in
+            DynamicIsland {
+                
+                DynamicIslandExpandedRegion(.leading) {
+                    Text("🛠️")
+                }
+                DynamicIslandExpandedRegion(.center) {
+                    VStack {
+                        Text(context.state.taskName)
+//                        Text("⏳ \(Int((1 - context.state.progress) * 120)) Menit Lagi")
+                        Text("Apple Developer Academy")
+                            .font(.caption2)
+                            .foregroundColor(.orange)
+                    }
+                }
+                DynamicIslandExpandedRegion(.trailing) {
+//                    Text("\(Int(context.state.progress * 100))%")
+                    Text("")
+                        .bold()
+                        .foregroundColor(context.state.progress < 1.0 ? .yellow : .green)
+                }
+                
+                DynamicIslandExpandedRegion(.trailing) {
+                    VStack {
+                        Text("Tugas Berikutnya : Mengecek Lift🚡")
+                            .font(.caption)
+                            .foregroundColor(.white)
+                        }
+                }
+                
+                DynamicIslandExpandedRegion(.center) {
+                    Text("08:00")
+                        .font(.subheadline)
+                }
+                
+            } compactLeading: {
+                Text("🛠️")
+            } compactTrailing: {
+//                Text("\(Int(context.state.progress * 100))%")
+                Text("\(context.state.taskName)")
+                    .bold()
+            } minimal: {
+                Text(context.state.progress >= 1.0 ? "✅" : "🔧")
             }
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
     }
 }
 
-#Preview(as: .systemSmall) {
-    FieldMateWidget()
-} timeline: {
-    SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
+@main
+struct FieldMateWidgetBundle: WidgetBundle {
+    var body: some Widget {
+        FieldMateLiveActivity()
+    }
 }
+

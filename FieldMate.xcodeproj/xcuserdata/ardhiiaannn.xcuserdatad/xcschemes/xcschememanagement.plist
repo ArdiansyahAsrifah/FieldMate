@@ -6,8 +6,54 @@
 	<dict>
 		<key>FieldMate.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>FieldMateWidgetExtension 1.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>FieldMateWidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>FieldMateWidgetExtensionExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>A572A7B32D8C3E510098C371</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A572A7C32D8C3E520098C371</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A572A7CD2D8C3E520098C371</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5D8BF922D8D9786007212FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
